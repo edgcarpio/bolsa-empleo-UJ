@@ -1,0 +1,38 @@
+<div class="login-page">
+	<div class="row">
+		<div class="col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4">
+        	<img src="images/logo2-unphu.png" class="logo-menu" />
+			<h1>Jobs</h1>
+			<form role="form"> 
+				<div class="form-content" ng-model="userTypeSelect" ng-show="userTypeSelect">
+                    
+                    <h3>Seleccione el tipo de usuario</h3>
+                    <button type="submit" class="btn btn-white btn-outline btn-lg btn-rounded" ng-click="submit('Estudiante')">Estudiante</button>
+                    <button type="submit" class="btn btn-white btn-outline btn-lg btn-rounded" ng-click="submit('Empleador')">Empleador</button>
+                
+                </div>
+
+            </form>
+            
+            <div ng-model="studentForm" ng-show="studentForm">
+                <form role="form">
+                    <div class="form-content">
+                        <h4>Nombres: </h4><input type="text" class="form-control input-underline input-lg" id="" placeholder="Ej: Juan">
+                    </div>                    
+                </form>
+            </div>
+            
+            <div ng-model="employerForm" ng-show="employerForm">
+                <form role="form">
+                    <div class="form-content">
+                        <h4>Nombre Empresa: </h4><input type="text" class="form-control input-underline input-lg" id="" placeholder="Ej: Empresas Juan SRL">
+                    </div>                    
+                </form>
+            </div>
+            
+            <h4> <a style="color:white; text-decoration: none;" href="" ui-sref="login" ><span class="glyphicon glyphicon-chevron-left"></span> Volver atras</a></h4>
+            
+		</div>	
+	</div>
+
+</div>

@@ -2,7 +2,7 @@
 
 describe('Controller: MainCtrl', function() {
   // load the controller's module
-  beforeEach(module('yapp'));
+  beforeEach(module('jobApp'));
 
   var MainCtrl;
   var scope;

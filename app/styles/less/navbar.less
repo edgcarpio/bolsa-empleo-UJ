@@ -48,7 +48,7 @@
 // content for the user's viewport.
 
 .navbar-collapse {
-  overflow-x: visible;
+  overflow-x: hidden;
   padding-right: @navbar-padding-horizontal;
   padding-left:  @navbar-padding-horizontal;
   border-top: 1px solid transparent;
@@ -192,11 +192,14 @@
 
 .navbar-toggle {
   position: relative;
-  float: right;
+  float: left;
   margin-right: @navbar-padding-horizontal;
+  margin-top: 8px;
+  margin-right: 15px;
+  margin-bottom: 8px;
   padding: 9px 10px;
   .navbar-vertical-align(34px);
-  background-color: transparent;
+  background-color: none;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   border: 1px solid transparent;
   border-radius: @border-radius-base;

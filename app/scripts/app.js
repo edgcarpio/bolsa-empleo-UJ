@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name yapp
+ * @name jobApp
  * @description
- * # yapp
+ * # jobApp
  *
  * Main module of the application.
  */
 angular
-  .module('yapp', [
+  .module('jobApp', [
     'ui.router',
     'ngAnimate'
   ])
@@ -29,6 +29,12 @@ angular
           parent: 'base',
           templateUrl: 'views/login.html',
           controller: 'LoginCtrl'
+        })
+        .state('signin', {
+          url: '/signin',
+          parent: 'base',
+          templateUrl: 'views/signin.html',
+          controller: 'SigninCtrl'
         })
         .state('dashboard', {
           url: '/dashboard',

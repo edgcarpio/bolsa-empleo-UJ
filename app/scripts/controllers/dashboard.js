@@ -2,14 +2,15 @@
 
 /**
  * @ngdoc function
- * @name yapp.controller:MainCtrl
+ * @name jobApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of yapp
+ * Controller of jobApp
  */
-angular.module('yapp')
+angular.module('jobApp')
   .controller('DashboardCtrl', function($scope, $state) {
-
+    $scope.student = false;
+    $scope.employer= false;
+    $scope.admin = true;
     $scope.$state = $state;
-
   });

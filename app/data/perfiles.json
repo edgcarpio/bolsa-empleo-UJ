@@ -1,0 +1,3 @@
+[{"id_perfil":1,"nombre":"Administrador","descripcion":"Acceso a todo"},
+{"id_perfil":2,"nombre":"Estudiante","descripcion":"puede consultar empleos"},
+{"id_perfil":3,"nombre":"Empleador","descripcion":"Puede crear, consultar, editar* y borrar*(sus propios empleos y perfil)"}]

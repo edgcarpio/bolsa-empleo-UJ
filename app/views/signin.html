@@ -17,15 +17,65 @@
             <div ng-model="studentForm" ng-show="studentForm">
                 <form role="form">
                     <div class="form-content">
-                        <h4>Nombres: </h4><input type="text" class="form-control input-underline input-lg" id="" placeholder="Ej: Juan">
+                        <h3><strong>Registro Estudiante</strong></h3>
+                        
+                        <h3 style="margin: 10%"><span class="glyphicon glyphicon-list"></span> Datos Generales</h3>
+                        <h4>Nombres: </h4><input type="text" class="form-control input-underline input-lg" id="" placeholder="Ej: Juan Carlos" required>
+                        <h4>Apellidos: </h4><input type="text" class="form-control input-underline input-lg" id="" placeholder="Ej: Perez" required >
+                        <h4>Fecha de Nacimiento: </h4><input type="date" class="form-control input-underline input-lg" id="" required>
+                        <h4>Describe tu perfil: </h4><textarea name="description" rows="8" cols="30" class="form-control input-underline input-lg" required></textarea>
+                        
+                        <h3 style="margin: 10%;"><span class="glyphicon glyphicon-education"></span> Datos Universitarios</h3>
+                        <h4>Matrícula: </h4><input type="text" class="form-control input-underline input-lg" id="" placeholder="Ej: 2017-9999" >
+                        <h4>Área de Interés: </h4>
+                        <select style="background-color: #5cb85c;" name="studyAreas" class="form-control input-underline input-lg" required>
+                            <option value="firefox"></option>
+                            <option value="firefox">Area 1</option>
+                            <option value="ie">Area 2</option>
+                            <option value="chrome">Area 3</option>
+                            <option value="opera">Area 4</option>
+                            <option value="safari">Area 5</option>
+                        </select>
+                        
+                        <h3 style="margin: 10%;"><span class="glyphicon glyphicon-phone-alt"></span> Contactos</h3>
+                        <h4>Email: </h4><input type="email" class="form-control input-underline input-lg" id="" placeholder="Ej: juan@gmail.com" required>
+                        <h4>Teléfono Principal </h4><input type="number" min="0" class="form-control input-underline input-lg" id="" placeholder="Ej: 8093334499" required>
+                        <h4>Teléfono Movil: </h4><input type="number" min="0" required class="form-control input-underline input-lg" id="" placeholder="Ej: 8294447700">
+                        <h4>Otro Teléfono: </h4><input type="number" min="0" class="form-control input-underline input-lg" id="" placeholder="Ej: 8095667788">
+                        <h4>Dirección: </h4><textarea name="address" rows="3" cols="25" class="form-control input-underline input-lg" required></textarea>
+                        
+                        <h3 style="margin: 10%;"><span class="glyphicon glyphicon-lock"></span> Credenciales</h3>
+                        <h4>Contraseña: </h4><input type="password" class="form-control input-underline input-lg" required>
+                        <h4>Repetir Contraseña </h4><input type="password" class="form-control input-underline input-lg" required>
+                        
+                        <button style="margin-top: 10%;" type="submit" class="btn btn-white btn-outline btn-lg btn-rounded" ng-click="signin('Empleador')"><strong>Registrarme</strong></button>
                     </div>                    
                 </form>
             </div>
             
-            <div ng-model="employerForm" ng-show="employerForm">
-                <form role="form">
+            
+            <div ng-model="employerForm" ng-show="employerForm">                
+                <form role="form">                   
                     <div class="form-content">
-                        <h4>Nombre Empresa: </h4><input type="text" class="form-control input-underline input-lg" id="" placeholder="Ej: Empresas Juan SRL">
+                        <h3><strong>Registro Empleador</strong></h3>
+                        <h3 style="margin: 10%"><span class="glyphicon glyphicon-list"></span> Datos Generales</h3>
+                        <h4>Nombre Empresa: </h4><input type="text" class="form-control input-underline input-lg" id="" placeholder="Ej: JBusiness" required>
+                        <h4>Razón Social: </h4><input type="text" class="form-control input-underline input-lg" id="" placeholder="Ej: Empresas Juan SRL" required >
+                        <h4>RNC: </h4><input type="number" min="0" class="form-control input-underline input-lg" id="" placeholder="Ej: 104553320">
+                        <h4>Describe tu empresa: </h4><textarea name="description" rows="8" cols="30" class="form-control input-underline input-lg" required></textarea>
+                        
+                        <h3 style="margin: 10%;"><span class="glyphicon glyphicon-phone-alt"></span> Contactos</h3>
+                        <h4>Email: </h4><input type="email" class="form-control input-underline input-lg" id="" placeholder="Ej: juan@jbusiness.com" required>
+                        <h4>Teléfono Principal </h4><input type="number" min="0" class="form-control input-underline input-lg" id="" placeholder="Ej: 8093334499" required>
+                        <h4>Teléfono Movil: </h4><input type="number" min="0" required class="form-control input-underline input-lg" id="" placeholder="Ej: 8294447700">
+                        <h4>Otro Teléfono: </h4><input type="number" min="0" class="form-control input-underline input-lg" id="" placeholder="Ej: 8095667788">
+                        <h4>Dirección: </h4><textarea name="address" rows="3" cols="25" class="form-control input-underline input-lg" required></textarea>
+                        
+                        <h3 style="margin: 10%;"><span class="glyphicon glyphicon-lock"></span> Credenciales</h3>
+                        <h4>Contraseña: </h4><input type="password" class="form-control input-underline input-lg" required>
+                        <h4>Repetir Contraseña </h4><input type="password" class="form-control input-underline input-lg" required>
+                        
+                        <button style="margin-top: 10%;" type="submit" class="btn btn-white btn-outline btn-lg btn-rounded" ng-click="signin('Empleador')"><strong>Registrarme</strong></button>
                     </div>                    
                 </form>
             </div>

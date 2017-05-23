@@ -1,0 +1,3 @@
+[{"id_usuario":1,"id_perfil":2,"contrasena":"estudiante"},
+{"id_usuario":2,"id_perfil":1,"contrasena":"admin"},
+{"id_usuario":3,"id_perfil":3,"contrasena":"empleador"}]

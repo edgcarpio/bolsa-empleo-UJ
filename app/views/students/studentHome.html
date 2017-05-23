@@ -1,0 +1,49 @@
+<section>
+	
+	<h2 ng-hide="isJobSelected">Empleos <small>Encuentra tus empleos segun tu área preferida.</small></h2>
+    <a ng-show='isJobSelected' ng-click="setSelected(null)" class="pull-left btn btn-primary btn-outline btn-rounded"><span class="glyphicon glyphicon-chevron-left"></span>Atras</a>
+	<div class="jumbotron">
+		<div class="container" ng-hide="isJobSelected">
+            <span><strong>Buscar:</strong></span> <input type="text" class="form-control" ng-model="searchText"/>
+            
+            <div class="panel-group">
+                <div class="panel panel-default" style="margin-top: 5%;" ng-repeat="job in jobsList  | filter: searchText | orderBy: 'id_area_estudio'" ng-click="setSelected(job)">
+                    <div class="panel-heading"><a class="btn-block" href="" style="text-decoration:none; color:white; font-size:20px;"><strong>{{job.titulo | uppercase}}</strong></a></div>
+                    <div class="panel-body"><a class="btn-block" href="#" style="text-decoration:none; color:#555;"><small>{{job.detalle | limitTo: 200}}...</small> Leer Más.</a></div>
+                    <div class="panel-footer" style=""><strong>{{getAreaName(job.id_area_estudio)}} <span class="pull-right"> {{job.fecha_creacion}}</span></strong></div>
+                </div>
+            </div>            
+		</div>
+        
+        <div class="container" ng-show="isJobSelected">
+            
+            <section ng-model="jobsList">
+                <h2 class="text-center" style="margin:0;">{{selectedJob.title}}</h2>
+                <h2 class="text-center" style="margin:0;"><small>{{selectedJob.employer}}</small></h2>
+                <h3 class="text-center" style="margin:0;"><small><strong>{{selectedJob.studyArea}}</strong></small></h3>
+                <h3 class="text-center" style="margin:0;"><small><strong>{{selectedJob.creationDate | date: longDate}}</strong></small></h3>
+                <a class="text-center" style="display:block;" href="">Hola</a>
+                <button class="text-center btn btn-primary btn-outline btn-lg btn-rounded" style="display:block;" type="submit" ng-model="md" >Aplicar2</button>
+                
+                <hr>                
+                
+                <h3>Descripción</h3>
+                <p  style="border-style:solid; border-radius:10px; border-width: 2px; border-color: #5cb85c; font-size: 18px; text-align:justify; padding:2.5%;">{{selectedJob.detail}}</p>
+                <br/>
+                
+                <hr>
+                
+                <p><strong>Salario:</strong> {{selectedJob.salary | currency:'RD$':2}}</p>
+                <p><strong>Tipo:</strong> {{selectedJob.type}}</p>
+                <p><strong>Horario:</strong> {{selectedJob.schedule}}</p>
+                
+                <form role="form" style="text-align:center;">
+                    <button type="submit" ng-model="md" class="btn btn-primary btn-outline btn-lg btn-rounded">Aplicar2</button>
+                </form>
+                
+                
+            </section>
+            <!-- <div class="center" ng-model="jobsList">{{jobsList[idSelectedJob].titulo}}</div> -->
+		</div>
+	</div>
+</section>

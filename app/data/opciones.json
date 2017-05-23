@@ -1,0 +1,2 @@
+[{"id_opcion":1,"nombre":"Gestion_Empleo","descripcion":"Opcion para consultar, crear, modificar y eliminar un empleo"},
+{"id_opcion":2,"nombre":"Gestion_Usuario","descripcion":"Opcion para consultar, crear, modificar y eliminar un usuario"}]

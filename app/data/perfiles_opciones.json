@@ -1,0 +1,6 @@
+[{"id_perfil_opcion":1,"id_perfil":1,"id_opcion":1,"consultar":1,"crear":1,"editar":1,"eliminar":1},
+{"id_perfil_opcion":2,"id_perfil":1,"id_opcion":2,"consultar":1,"crear":1,"editar":1,"eliminar":1},
+{"id_perfil_opcion":3,"id_perfil":2,"id_opcion":1,"consultar":1,"crear":0,"editar":0,"eliminar":0},
+{"id_perfil_opcion":4,"id_perfil":2,"id_opcion":2,"consultar":0,"crear":0,"editar":0,"eliminar":0},
+{"id_perfil_opcion":5,"id_perfil":3,"id_opcion":1,"consultar":1,"crear":1,"editar":1,"eliminar":1},
+{"id_perfil_opcion":6,"id_perfil":3,"id_opcion":2,"consultar":0,"crear":0,"editar":0,"eliminar":0},]

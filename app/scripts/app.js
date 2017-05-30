@@ -44,13 +44,13 @@ angular
         parent: 'dashboard',
         templateUrl: 'views/students/studentHome.html',
         controller: 'studentCtrl'
-      })/*
-      .state('jobDetails', {
-        url: '/jobDetail',
+      })
+      .state('employerHome', {
+        url: '/employer',
         parent: 'dashboard',
-        templateUrl: 'views/students/jobDetails.html',
-        controller: 'studentCtrl'
-      })*/
+        templateUrl: 'views/employers/employerHome.html',
+        controller: 'employerCtrl'
+      })
       .state('reports', {
         url: '/reports',
         parent: 'dashboard',

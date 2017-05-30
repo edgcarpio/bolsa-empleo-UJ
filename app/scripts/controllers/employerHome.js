@@ -2,22 +2,23 @@
 
 /**
  * @ngdoc function
- * @name jobApp.controller:MainCtrl
+ * @name jobApp.controller:employerCtrl
  * @description
- * # MainCtrl
- * Controller of jobApp
+ * # employerCtrl
+ * Controller of employers
  */
 angular.module('jobApp')
-  .controller('studentCtrl', function(userTypeService, mockDataService, $scope, $location) {
+  .controller('employerCtrl', function(userTypeService, mockDataService, $scope, $location) {
     
     $scope.student = userTypeService.student;
     $scope.employer = userTypeService.employer;
     $scope.admin = userTypeService.admin;
-
+    $scope.userData = userTypeService.getProfile
     
     $scope.jobsList = this;
     $scope.studyAreasList = this;
     $scope.employersList = this;
+    //$scope.loggedEmployerName = function;
     $scope.isJobSelected = false;
     $scope.selectedJob = {id: null, studyArea: null, employer: null, title: null, detail: null, salary: null, creation_date: null, schedule: null, type: null};
    
@@ -64,6 +65,7 @@ angular.module('jobApp')
         //console.log("getEmployerName");
        for(var employer in $scope.employersList){
            if($scope.employersList[employer].id_empleador == employerId){
+               $scope.loggedEmployerName = $scope.employersList[employer].nombre_empresa;
                return $scope.employersList[employer].nombre_empresa;
            };
        };

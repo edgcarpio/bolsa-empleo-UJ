@@ -1,66 +1,66 @@
-            <div ng-model="" class="jumbotron">
-                <div class="container">
-                    <form role="form">
-                        <div class="form-content col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1" >
+<div ng-show="student" class="container">
+    <a ui-sref="studentHome" class="pull-left btn btn-primary btn-outline btn-rounded"><span class="glyphicon glyphicon-chevron-left"></span> Volver Atras</a>
+    <form role="form">
+        <div class="form-content col-md-8 col-lg-8 col-sm-8" >
 
-                            <h3><strong> <span class="glyphicon glyphicon-list"></span> Datos Generales </strong></h3>
-                            <h4>Nombres: </h4><input type="text" class="form-control input-lg" id="" placeholder="Ej: Juan Carlos" required>
-                            <h4>Apellidos: </h4><input type="text" class="form-control input-lg" id="" placeholder="Ej: Perez" required >
-                            <h4>Fecha de Nacimiento: </h4><input type="date" class="form-control input-lg" id="" required>
-                            <h4>Describe tu perfil: </h4><textarea name="description" rows="8" cols="30" class="form-control input-lg" required></textarea>
+            <h3><strong> <span class="glyphicon glyphicon-list"></span> Datos Generales </strong></h3>
+            <h4>Nombres: </h4><input type="text" class="form-control input-lg" id="" placeholder="Ej: Juan Carlos" required>
+            <h4>Apellidos: </h4><input type="text" class="form-control input-lg" id="" placeholder="Ej: Perez" required >
+            <h4>Fecha de Nacimiento: </h4><input type="date" class="form-control input-lg" id="" required>
+            <h4>Describe tu perfil: </h4><textarea name="description" rows="8" cols="30" class="form-control input-lg" required></textarea>
+            <hr>
+            <h3 style="margin: 10%;"><span class="glyphicon glyphicon-education"></span> Datos Universitarios</h3>
+            <h4>Matrícula: </h4><input type="text" class="form-control input-lg" id="" placeholder="Ej: 2017-9999" >
+            <h4>Área de Interés: </h4>
+            <select name="studyAreas" class="form-control input-lg" required>
+                <option value="firefox"></option>
+                <option value="firefox">Area 1</option>
+                <option value="ie">Area 2</option>
+                <option value="chrome">Area 3</option>
+                <option value="opera">Area 4</option>
+                <option value="safari">Area 5</option>
+            </select>
+            <hr>
+            <h3 style="margin: 10%;"><strong> <span class="glyphicon glyphicon-phone-alt"></span> Contactos </strong></h3>
+            <h4>Email: </h4><input type="email" class="form-control input-lg" id="" placeholder="Ej: juan@gmail.com" required>
+            <h4>Teléfono Principal </h4><input type="number" min="0" class="form-control input-lg" id="" placeholder="Ej: 8093334499" required>
+            <h4>Teléfono Movil: </h4><input type="number" min="0" required class="form-control input-lg" id="" placeholder="Ej: 8294447700">
+            <h4>Otro Teléfono: </h4><input type="number" min="0" class="form-control input-lg" id="" placeholder="Ej: 8095667788">
+            <h4>Dirección: </h4><textarea name="address" rows="3" cols="25" class="form-control input-lg" required></textarea>
+            <hr>
+            <h3 style="margin: 10%;"><strong><span class="glyphicon glyphicon-lock"></span> Credenciales </strong></h3>
+            <h4>Contraseña: </h4><input type="password" class="form-control input-lg" required>
+            <h4>Repetir Contraseña </h4><input type="password" class="form-control input-lg" required>
 
-                            <h3 style="margin: 10%;"><span class="glyphicon glyphicon-education"></span> Datos Universitarios</h3>
-                            <h4>Matrícula: </h4><input type="text" class="form-control input-lg" id="" placeholder="Ej: 2017-9999" >
-                            <h4>Área de Interés: </h4>
-                            <select name="studyAreas" class="form-control input-lg" required>
-                                <option value="firefox"></option>
-                                <option value="firefox">Area 1</option>
-                                <option value="ie">Area 2</option>
-                                <option value="chrome">Area 3</option>
-                                <option value="opera">Area 4</option>
-                                <option value="safari">Area 5</option>
-                            </select>
+            <button style="margin-top: 10%;" type="submit" class="btn btn-primary btn-outline btn-lg btn-rounded" ng-click=""><strong>Guardar</strong></button>
+        </div>                    
+    </form>
+</div>
 
-                            <h3 style="margin: 10%;"><strong> <span class="glyphicon glyphicon-phone-alt"></span> Contactos </strong></h3>
-                            <h4>Email: </h4><input type="email" class="form-control input-lg" id="" placeholder="Ej: juan@gmail.com" required>
-                            <h4>Teléfono Principal </h4><input type="number" min="0" class="form-control input-lg" id="" placeholder="Ej: 8093334499" required>
-                            <h4>Teléfono Movil: </h4><input type="number" min="0" required class="form-control input-lg" id="" placeholder="Ej: 8294447700">
-                            <h4>Otro Teléfono: </h4><input type="number" min="0" class="form-control input-lg" id="" placeholder="Ej: 8095667788">
-                            <h4>Dirección: </h4><textarea name="address" rows="3" cols="25" class="form-control input-lg" required></textarea>
 
-                            <h3 style="margin: 10%;"><strong><span class="glyphicon glyphicon-lock"></span> Credenciales </strong></h3>
-                            <h4>Contraseña: </h4><input type="password" class="form-control input-lg" required>
-                            <h4>Repetir Contraseña </h4><input type="password" class="form-control input-lg" required>
-
-                            <button style="margin-top: 10%;" type="submit" class="btn btn-white btn-outline btn-lg btn-rounded" ng-click="signin('Empleador')"><strong>Registrarme</strong></button>
-                        </div>                    
-                    </form>
-                </div>
+<div ng-show="employer" class="container">
+    <a ui-sref="studentHome" class="pull-left btn btn-primary btn-outline btn-rounded"><span class="glyphicon glyphicon-chevron-left"></span> Volver Atras</a><br/>
+    <form role="form">                   
+        <div class="form-content col-md-8 col-lg-8 col-sm-8">
+            <h3 style="margin: 10%"><strong> <span class="glyphicon glyphicon-list"></span> Datos Generales </strong></h3>
+            <h4>Nombre Empresa: </h4><input type="text" class="form-control input-lg" id="" placeholder="Ej: JBusiness" required>
+            <h4>Razón Social: </h4><input type="text" class="form-control input-lg" id="" placeholder="Ej: Empresas Juan SRL" required >
+            <h4>RNC: </h4><input type="number" min="0" class="form-control input-lg" id="" placeholder="Ej: 104553320">
+            <h4>Describe tu empresa: </h4><textarea name="description" rows="8" cols="30" class="form-control input-lg" required></textarea>
+            <hr>
+            <h3 style="margin: 10%;"><strong> <span class="glyphicon glyphicon-phone-alt"></span> Contactos </strong></h3>
+            <h4>Email: </h4><input type="email" class="form-control input-lg" id="" placeholder="Ej: juan@jbusiness.com" required>
+            <h4>Teléfono Principal </h4><input type="number" min="0" class="form-control input-lg" id="" placeholder="Ej: 8093334499" required>
+            <h4>Teléfono Movil: </h4><input type="number" min="0" required class="form-control input-lg" id="" placeholder="Ej: 8294447700">
+            <h4>Otro Teléfono: </h4><input type="number" min="0" class="form-control input-lg" id="" placeholder="Ej: 8095667788">
+            <h4>Dirección: </h4><textarea name="address" rows="3" cols="25" class="form-control input-lg" required></textarea>
+            <hr>
+            <h3 style="margin: 10%;"><strong> <span class="glyphicon glyphicon-lock"></span> Credenciales</strong></h3>
+            <h4>Contraseña: </h4><input type="password" class="form-control input-lg" required>
+            <h4>Repetir Contraseña </h4><input type="password" class="form-control input-lg" required>
+            <div style="text-align:center;">
+                <button style="margin-top: 10%;" type="submit" class="btn btn-primary btn-outline btn-lg btn-rounded" ng-click=""><strong>Guardar</strong></button>
             </div>
-            
-            
-            <div ng-model="employerForm" ng-show="employerForm">                
-                <form role="form">                   
-                    <div class="form-content">
-                        <h3><strong>Registro Empleador</strong></h3>
-                        <h3 style="margin: 10%"><strong> <span class="glyphicon glyphicon-list"></span> Datos Generales </strong></h3>
-                        <h4>Nombre Empresa: </h4><input type="text" class="form-control input-underline input-lg" id="" placeholder="Ej: JBusiness" required>
-                        <h4>Razón Social: </h4><input type="text" class="form-control input-underline input-lg" id="" placeholder="Ej: Empresas Juan SRL" required >
-                        <h4>RNC: </h4><input type="number" min="0" class="form-control input-underline input-lg" id="" placeholder="Ej: 104553320">
-                        <h4>Describe tu empresa: </h4><textarea name="description" rows="8" cols="30" class="form-control input-underline input-lg" required></textarea>
-                        
-                        <h3 style="margin: 10%;"><strong> <span class="glyphicon glyphicon-phone-alt"></span> Contactos </strong></h3>
-                        <h4>Email: </h4><input type="email" class="form-control input-underline input-lg" id="" placeholder="Ej: juan@jbusiness.com" required>
-                        <h4>Teléfono Principal </h4><input type="number" min="0" class="form-control input-underline input-lg" id="" placeholder="Ej: 8093334499" required>
-                        <h4>Teléfono Movil: </h4><input type="number" min="0" required class="form-control input-underline input-lg" id="" placeholder="Ej: 8294447700">
-                        <h4>Otro Teléfono: </h4><input type="number" min="0" class="form-control input-underline input-lg" id="" placeholder="Ej: 8095667788">
-                        <h4>Dirección: </h4><textarea name="address" rows="3" cols="25" class="form-control input-underline input-lg" required></textarea>
-                        
-                        <h3 style="margin: 10%;"><strong> <span class="glyphicon glyphicon-lock"></span> Credenciales</strong></h3>
-                        <h4>Contraseña: </h4><input type="password" class="form-control input-underline input-lg" required>
-                        <h4>Repetir Contraseña </h4><input type="password" class="form-control input-underline input-lg" required>
-                        
-                        <button style="margin-top: 10%;" type="submit" class="btn btn-white btn-outline btn-lg btn-rounded" ng-click="signin('Empleador')"><strong>Registrarme</strong></button>
-                    </div>                    
-                </form>
-            </div>
+        </div>                    
+    </form>                
+</div>

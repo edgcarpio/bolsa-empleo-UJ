@@ -12,21 +12,21 @@
 <div class="collapse navbar-collapse" id="myNavbar">
        <div class="text-center">
         <h2 class="brand">UNPHU <small>JOBS</small></h2>
-        <a href="" ui-sref="editProfile"><img src="images/flat-avatar.png" class="user-avatar" /><br /></a>
+        <a href="" ui-sref="editProfile"><img src="images/flat-avatar.png" width="120px" height="120px" class="user-avatar" /><br /></a>
         <a ui-sref="login" class="btn btn-white btn-outline btn-rounded btn-sm">Cerrar Sesión</a>
       </div>
           
               
       <ul class="nav nav-sidebar" ng-model='student' ng-show='student'>
           <li ng-class="{active: $state.includes('studentHome')}"><a ui-sref="studentHome">Inicio (student)<span class="sr-only">(current)</span></a></li>
-          <li ng-class="{active: $state.includes('reports')}"><a ui-sref="reports">Reports</a></li>
+          <li ng-class="{active: $state.includes('editProfile')}"><a ui-sref="editProfile">Editar Perfil</a></li>
           <li ng-class="{active: $state.includes('')}"><a href="" ui-sref="overview">Opcion</a></li>
           <li ng-class="{active: $state.includes('')}"><a href="" ui-sref="reports">Opcion</a></li>
       </ul>
 
       <ul class="nav nav-sidebar" ng-model='employer' ng-show='employer'>
-          <li ng-class="{active: $state.includes('overview')}"><a ui-sref="overview">Inicio (Employer)<span class="sr-only">(current)</span></a></li>
-          <li ng-class="{active: $state.includes('reports')}"><a ui-sref="reports">Reports (Employer)</a></li>
+          <li ng-class="{active: $state.includes('employerHome')}"><a ui-sref="employerHome">Inicio (Employer)<span class="sr-only">(current)</span></a></li>
+          <li ng-class="{active: $state.includes('editProfile')}"><a ui-sref="editProfile">Editar Perfil</a></li>
           <li ng-class="{active: $state.includes('')}"><a href="" ui-sref="overview">Opcion</a></li>
           <li ng-class="{active: $state.includes('')}"><a href="" ui-sref="reports">Opcion</a></li>
       </ul>

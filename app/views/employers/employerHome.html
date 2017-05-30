@@ -1,6 +1,6 @@
 <section>
 	
-	<h2 ng-hide="isJobSelected">Empleos <small>Encuentra tus empleos segun tu área preferida.</small></h2>
+	<h2 ng-hide="isJobSelected" style="text-align: center;"><strong> {{userData.nombre_empresa}} - Empresa</strong></h2>
     <a ng-show='isJobSelected' ng-click="setSelected(null)" class="pull-left btn btn-primary btn-outline btn-rounded"><span class="glyphicon glyphicon-chevron-left"></span> Volver Atras</a>
 	<div class="jumbotron">
 		<div class="container" ng-hide="isJobSelected">

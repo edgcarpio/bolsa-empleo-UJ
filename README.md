@@ -1,6 +1,6 @@
-## UNPHU JOBS - Sistema de Gestion de Bolsa de Empleos
+## Sistema de Gestion de Bolsa de Empleos
 
-UNPHU JOBS esta basado en AngularJS, Gulp, Bootstrap Less, HTML5 y CSS3.
+Este sistema esta basado en AngularJS, Gulp, Bootstrap Less, HTML5 y CSS3.
 
 ## Instalación
 1. Clonar este proyecto.

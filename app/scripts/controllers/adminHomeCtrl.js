@@ -52,8 +52,9 @@ angular.module('jobApp')
     }
     
     $scope.setTimeout = function(){
-        setTimeout(function(){ $('#dataTables-example').DataTable({
+        setTimeout(function(){ $('#dtUsers').DataTable({
             responsive: true,
+            "lengthMenu": [ [5, 10, 15, -1], [5, 10, 15, "All"] ],
             "language": {
             "lengthMenu": "Mostrar _MENU_ registros por página",
             "zeroRecords": "Nada encontrado - disculpas",
@@ -69,7 +70,45 @@ angular.module('jobApp')
             }
         }
         }) }, 2000);
-    }
+
+        setTimeout(function(){ $('#dtRequests').DataTable({
+            responsive: true,
+            "lengthMenu": [ [5, 10, 15, -1], [5, 10, 15, "All"] ],
+            "language": {
+            "lengthMenu": "Mostrar _MENU_ registros por página",
+            "zeroRecords": "Nada encontrado - disculpas",
+            "info": "Mostrando página _PAGE_ de _PAGES_",
+            "infoEmpty": "No hay registros disponibles",
+            "infoFiltered": "(Filtrado de los registros totales de _MAX_)",
+            "search":         "Buscar:",
+            "paginate": {
+                "first":      "Primera",
+                "last":       "Ultima",
+                "next":       "Siguiente",
+                "previous":   "Anterior"
+            }
+        }
+        }) }, 2000);
+
+        setTimeout(function(){ $('#dtEmployees').DataTable({
+            responsive: true,
+            "lengthMenu": [ [5, 10, 15, -1], [5, 10, 15, "All"] ],
+            "language": {
+            "lengthMenu": "Mostrar _MENU_ registros por página",
+            "zeroRecords": "Nada encontrado - disculpas",
+            "info": "Mostrando página _PAGE_ de _PAGES_",
+            "infoEmpty": "No hay registros disponibles",
+            "infoFiltered": "(Filtrado de los registros totales de _MAX_)",
+            "search":         "Buscar:",
+            "paginate": {
+                "first":      "Primera",
+                "last":       "Ultima",
+                "next":       "Siguiente",
+                "previous":   "Anterior"
+            }
+        }
+        }) }, 2000);
+    };
     
     $scope.setTimeout();
     

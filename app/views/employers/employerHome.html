@@ -1,51 +1,110 @@
 <section>
 	
-	<h2 ng-hide="isJobSelected" style="text-align: center;"><strong> {{userData.nombre_empresa}} - Empresa</strong></h2>
+	<h1 ng-hide="isJobSelected" style="text-align: center;"><strong> {{userData.nombre_empresa}}</strong></h1>
     <a ng-show='isJobSelected' ng-click="setSelected(null)" class="pull-left btn btn-primary btn-outline btn-rounded"><span class="glyphicon glyphicon-chevron-left"></span> Volver Atras</a>
 	<div class="jumbotron">
 		<div class="container" ng-hide="isJobSelected">
-            <span><strong>Buscar:</strong></span> <input type="text" class="form-control" ng-model="searchText"/>
+            <span><strong>Ordenar Empleos Por:</strong></span> 
+            <select style="background-color: #5cb85c;" name="empSearch" class="form-control input-underline input-lg" required>
+                <option value="date">Fecha</option>
+                <option value="name">Nombre</option>
+                <option value="area">Area de Estudio</option>
+            </select>
+            
+            
+            
             
             <div class="panel-group">
-                <div class="panel panel-default" style="margin-top: 5%;" ng-repeat="job in jobsList  | filter: searchText | orderBy: 'id_area_estudio'" ng-click="setSelected(job)">
-                    <div class="panel-heading"><a class="btn-block" href="" style="text-decoration:none; color:white; font-size:20px;"><strong>{{job.titulo | uppercase}}</strong></a></div>
-                    <div class="panel-body"><a class="btn-block" href="#" style="text-decoration:none; color:#555;"><small>{{job.detalle | limitTo: 200}}...</small> Leer Más.</a></div>
-                    <div class="panel-footer" style=""><strong>{{getAreaName(job.id_area_estudio)}} <span class="pull-right"> {{job.fecha_creacion}}</span></strong></div>
+                <div class="panel panel-default" style="margin-top: 5%;" ng-repeat="job in employerJobList | orderBy: -'fecha_creacion'" >
+                    <div class="panel-heading"><a ng-click="setSelected(job)" class="" href="" style="text-decoration:none; color:white; font-size:24px; margin:auto; clear: fix;"><strong>{{job.titulo | uppercase}}</strong></a><span class="pull-right"><a href="" ui-sref="empEdit({jobID: job.id_empleo})" style=""><img alt="Editar" src="../../images/edit.png" width="30px" /></a><a type="submit" data-toggle="modal" data-target="#modalDelete" href="#" ui-sref="delete"><img alt="Eliminar" src="../../images/eliminar.png" width="30px" /></a></span></div>
+                    <div class="panel-body" ng-click="setSelected(job)"><a class="btn-block" href="#" style="text-decoration:none; color:#555; text-align:justify;"><small>{{job.detalle | limitTo: 235}}...</small> <strong><em>Leer Más.</em></strong></a></div>
+                    <div class="panel-footer" style="" ng-click="setSelected(job)"><strong>{{getAreaName(job.id_area_estudio)}} <span class="pull-right"> {{job.fecha_creacion}}</span></strong></div>
                 </div>
-            </div>            
+            </div> 
+            
+            <!-- Modal -->
+                    <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="ModalEliminarEmpleo" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h3 class="modal-title" id="exampleModalLabel">UNPHU JOBS</h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body" style="font-size: 18px;">
+                            <p style="text-align:center">¿Esta seguro de eliminar este empleo?</p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#modalDeleted">Eliminar</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            <!-- end Modal -->
+            <!-- Modal -->
+                    <div class="modal fade" id="modalDeleted" tabindex="-1" role="dialog" aria-labelledby="ModalEliminarEmpleo" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h3 class="modal-title" id="exampleModalLabel">UNPHU JOBS</h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body" style="font-size: 18px;">
+                            <p style="text-align:center">Empleo eliminado exitosamente!</p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            <!-- end Modal -->
+            
 		</div>
         
-        <div class="container" ng-show="isJobSelected">
-            <section class="col-lg-10 col-md-8 col-lg-offset-1   col-md-offset-2">
-            <section ng-model="jobsList">
-                <h2 class="text-center" style="margin:0;">{{selectedJob.title}}</h2>
+        <div class="container" ng-show="isJobSelected" >
+            <section>
+            <section ng-model="jobsList" class="col-lg-10 col-md-8 col-lg-offset-1   col-md-offset-2">
+                <h2 class="text-center" style="margin:0; clear:both;">{{selectedJob.title}}</h2>
                 <h2 class="text-center" style="margin:0;"><small>{{selectedJob.employer}}</small></h2>
                 <h3 class="text-center" style="margin:0;"><small><strong>{{selectedJob.studyArea}}</strong></small></h3>
                 <h3 class="text-center" style="margin:0;"><small><strong>{{selectedJob.creationDate | date: longDate}}</strong></small></h3>
                 
                 <hr>                
                 
-                    <h3>Descripción</h3>
-                    <p  style="border-style:solid; border-radius:10px; border-width: 2px; border-color: #5cb85c; font-size: 18px; text-align:justify; padding:2.5%;">{{selectedJob.detail}}</p>
-                    <br/>
-                    <hr>
-                </section>
+                <h3>Descripción</h3>
+                <p  style="border-radius:10px; background-color: rgba(92, 184, 92,0.1); font-size: 18px; text-align:justify; padding:2.5%;">{{selectedJob.detail}}</p>
+                <br/>
+                <hr>                
+                <h3>Requerimientos</h3>
+                <ul style="border-radius:10px; background-color: rgba(92, 184, 92,0.1); font-size: 18px; text-align:justify;  margin:2.5px;">
+                    <li>Req 1</li>
+                    <li>Req 2</li>
+                    <li>Req 3</li>
+                    <li>Req 4</li>
+                </ul>
+                <br/>
+                <hr>
+            </section>
                 
                 
-               
-                <article class="" style="border-style:solid; border-radius:10px; border-width: 2px; border-color: #5cb85c;">
-                    <p><strong>Salario:</strong> {{selectedJob.salary | currency:'RD$':2}}</p>
-                    <p><strong>Tipo:</strong> {{selectedJob.type}}</p>
-                    <p><strong>Horario:</strong> {{selectedJob.schedule}}</p>
+               <h3>Condiciones</h3>
+                <article class="" style="border-radius:10px; background-color: rgba(92, 184, 92,0.1);">
+                    <p style="font-size: 18px;"><strong>Salario:</strong> {{selectedJob.salary | currency:'RD$':2}}</p>
+                    <p style="font-size: 18px;"><strong>Tipo:</strong> {{selectedJob.type}}</p>
+                    <p style="font-size: 18px;"><strong>Horario:</strong> {{selectedJob.schedule}}</p>
                 </article>
                 
-                
+                <!--
                 <form role="form" style="text-align:center;" ng-show="student">
                     <button type="submit" ng-click="aplicar()" class="btn btn-primary btn-outline btn-lg btn-rounded" style="font-size:20px;"><strong>Aplicar</strong></button>
-                </form>
+                </form> -->
                 </section>
-                
-            </section>
+
             <!-- <div class="center" ng-model="jobsList">{{jobsList[idSelectedJob].titulo}}</div> -->
 		</div>
 	</div>

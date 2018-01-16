@@ -60,5 +60,23 @@ angular
         url: '/profile',
         parent: 'dashboard',
         templateUrl: 'views/dashboard/profile.html'
-      });
+      })
+      .state('empEdit', {
+        url: '/edit/:jobID',
+        parent: 'dashboard',
+        templateUrl: 'views/employers/empEdit.html',
+        controller: 'empEditCtrl'
+      })
+      .state('studentSearch', {
+        url: '/studentSearch',
+        parent: 'dashboard',
+        templateUrl: 'views/employers/studentSearch.html',
+        controller: 'studentSearchCtrl'
+      })
+      .state('adminHome', {
+        url: '/admin',
+        parent: 'dashboard',
+        templateUrl: 'views/admins/adminHome.html',
+        controller: 'adminHomeCtrl'
+      })
   });

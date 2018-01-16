@@ -18,23 +18,20 @@
           
               
       <ul class="nav nav-sidebar" ng-model='student' ng-show='student'>
-          <li ng-class="{active: $state.includes('studentHome')}"><a ui-sref="studentHome">Inicio (student)<span class="sr-only">(current)</span></a></li>
+          <li ng-class="{active: $state.includes('studentHome')}"><a ui-sref="studentHome">Inicio<span class="sr-only">(current)</span></a></li>
           <li ng-class="{active: $state.includes('editProfile')}"><a ui-sref="editProfile">Editar Perfil</a></li>
-          <li ng-class="{active: $state.includes('')}"><a href="" ui-sref="overview">Opcion</a></li>
-          <li ng-class="{active: $state.includes('')}"><a href="" ui-sref="reports">Opcion</a></li>
       </ul>
 
       <ul class="nav nav-sidebar" ng-model='employer' ng-show='employer'>
-          <li ng-class="{active: $state.includes('employerHome')}"><a ui-sref="employerHome">Inicio (Employer)<span class="sr-only">(current)</span></a></li>
+          <li ng-class="{active: $state.includes('employerHome')}"><a ui-sref="employerHome">Inicio<span class="sr-only">(current)</span></a></li>
           <li ng-class="{active: $state.includes('editProfile')}"><a ui-sref="editProfile">Editar Perfil</a></li>
-          <li ng-class="{active: $state.includes('')}"><a href="" ui-sref="overview">Opcion</a></li>
-          <li ng-class="{active: $state.includes('')}"><a href="" ui-sref="reports">Opcion</a></li>
+          <li ng-class="{active: $state.includes('studentSearch')}"><a href="" ui-sref="studentSearch">Buscar Estudiantes</a></li>
       </ul>
 
       <ul class="nav nav-sidebar" ng-model='admin' ng-show='admin'>          
-          <li ng-class="{active: $state.includes('overview')}"><a ui-sref="overview">Inicio (Admin)<span class="sr-only">(current)</span></a></li>
-          <li ng-class="{active: $state.includes('reports')}"><a ui-sref="reports">Reports (Admin)</a></li>
-          <li ng-class="{active: $state.includes('')}"><a href="" ui-sref="overview">Opcion</a></li>
+          <li ng-class="{active: $state.includes('adminHome')}"><a ui-sref="adminHome">Inicio<span class="sr-only">(current)</span></a></li>
+          <li ng-class="{active: $state.includes('reports')}"><a ui-sref="reports">Gestionar Usuarios</a></li>
+          <li ng-class="{active: $state.includes('')}"><a href="" ui-sref="overview">Gestionar Empleos</a></li>
           <li ng-class="{active: $state.includes('')}"><a href="" ui-sref="reports">Opcion</a></li>          
       </ul>
 

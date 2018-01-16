@@ -1,0 +1,204 @@
+
+<section>
+	
+	<h1 ng-hide="isStudentSelected" style="text-align: center;"><strong>{{userData.nombre_empresa}}</strong></h1>
+    <a ng-show='isStudentSelected' ng-click="setSelected(null)" class="pull-left btn btn-primary btn-outline btn-rounded"><span class="glyphicon glyphicon-chevron-left"></span> Volver Atras</a>
+	<div class="jumbotron">
+		<div class="container" ng-hide="isStudentSelected">
+            <span><strong>Ordenar Estudiantes Por:</strong></span> 
+            <select style="background-color: #5cb85c;" name="empSearch" class="form-control input-underline input-lg" required>
+                <option value="area_estudio">Area de Estudio</option>
+                <option value="nombre">Nombre</option>
+            </select>
+            
+            <div class="panel-group">
+            <!--Panel Results-->
+            <div class="panel panel-default" ng-click="setSelected(student)" style="margin-top: 5%;" ng-repeat="student in studentList | orderBy: -'area_estudio'">
+                  <div class="panel-heading" >
+                      <a class="btn-block" href="#" style="text-align:center; text-decoration:none; color:white; font-size:24px;"><strong>{{student.nombre | uppercase}} {{student.apellido | uppercase}}</strong></a>
+                  </div>
+
+                  <div class="panel-body">
+                      <div class="media">
+                          <div class="pull-left">
+                              <img class="media-object img-responsive" src="../../images/flat-avatar.png" width="200" height="200" alt="small">
+                          </div>
+                          <div class="media-body">
+                              <table border="0"  class="col-md-12" >
+                                <tr>
+                                    <td width="40%"><p style="text-align: left; font-size:16px;"><span><strong>Area de Estudio:</strong></span></p></td>
+                                    <td><p style="text-align: left; font-size:14px;"><strong>{{student.area_estudio}}</strong></p></td>
+                                </tr>
+                                <tr>
+                                    <td><p style="text-align: left; font-size:16px;" ><span><strong>Fecha de Nacimiento:</strong></span></p></td>
+                                    <td ><p style="text-align: left; font-size:14px;">{{student.fecha_nacimiento}}</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p style="text-align: left; font-size:16px;"><span ><strong>Matrícula:</strong></span></p></td>
+                                    <td><p style="text-align: left; font-size:14px;">{{student.matricula}}</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p style="text-align: left; font-size:16px;"><span><strong>Correo Electrónico:</strong></span></p></td>
+                                    <td><p style="text-align: left;font-size:14px;"><strong>{{student.email}}</strong></p></td>
+                                </tr>
+                                <tr>
+                                    <td><p style="text-align: left; font-size:16px;"><strong>Telefonos:</strong></p></td>
+                                    <td><p style="text-align: left;font-size:14px;">{{student.cel}} <br/> {{student.tel_1}}</p></td>
+                                </tr>
+                            </table>
+                          </div>
+                      </div>
+                      
+                  </div>
+                
+                <div class="panel-footer">
+                    <a class="btn-block" style="text-align:center; text-decoration:none; color:#555;" href="#">
+                        <strong>Ver Mas...</strong> 
+                    </a>
+                </div>
+              </div> <!--End Panel Results-->
+            
+            <!--
+                <div class="panel panel-default" style="margin-top: 5%;" ng-repeat="student in studentList | orderBy: -'area_estudio'" >
+                    <div class="panel-heading"><a ng-click="setSelected(student)" class="" href="" style="text-decoration:none; color:white; font-size:24px; margin:auto; clear: fix;"><strong>{{student.nombre }} {{student.apellido}}</strong> <span class="pull-right"><img src="../../images/student.png" width="25px" height="25px"></span></a></div>
+                    <div class="panel-body" ng-click="setSelected(student)"><a class="btn-block" href="#" style="text-decoration:none; color:#555;"><small>{{student.desc_perfil | limitTo: 400}}...</small> Leer Más.</a></div>
+                    <div class="panel-footer" style="" ng-click="setSelected(student)"><strong>{{student.area_estudio}} </strong></div>
+                </div> -->
+                
+            </div> <!--End Panel Group-->
+            
+                        
+		</div>
+        
+        <div class="container" ng-show="isStudentSelected" >
+            <section ng-model="jobsList" class="col-lg-10 col-md-8 col-lg-offset-1 col-md-offset-2" >
+                <img src="../../images/flat-avatar.png" style="display: block; margin: 0 auto;" width="240px" height="240px">
+                <!-- <h2 class="text-center " style="margin:0; clear:both;">Datos Personales</h2>-->
+                <h2 class="text-center" style="margin:-5px;"><strong>{{selectedStudent.name + " " + selectedStudent.last_name}}</strong></h2>
+                <em><h3 class="text-center" style="margin-top:2%;">{{selectedStudent.study_area}}</h3></em>
+                
+                <table border="0" style="margin:5%; 0" class="col-md-12">
+                    <tr>
+                    <td width="40%"><h4 style="text-align: left;"><span><strong>Fecha de Nacimiento:</strong></span></h4></td>
+                        <td><h4 style="text-align: left; margin-left:15%; font-size:16px;">{{selectedStudent.date_birth}}</h4></td>
+                    </tr>
+                    <tr>
+                        <td><h4 style="text-align: left;"><span ><strong>Matrícula:</strong></span></h4></td>
+                        <td><h4 style="text-align: left; margin-left:15%; ">{{selectedStudent.registration}}</h4></td>
+                    </tr>
+                    <tr>
+                        <td><h4 style="text-align: left;"><span><strong>Correo Electrónico:</strong></span></h4></td>
+                        <td><h4 style="text-align: left;margin-left:15%; "><strong>{{selectedStudent.email}}</strong></h4></td>
+                    </tr>
+                    <tr>
+                        <td><h4 style="text-align: left;"><strong>Telefonos:</strong></h4></td>
+                        <td><h4 style="text-align: left;margin-left:15%;">{{selectedStudent.cel}} <br/>{{selectedStudent.tel_1}}</h4></td>
+                    </tr>
+                </table>
+                
+                
+                <hr>
+                <br/>
+                
+                <h3>Descripción del Perfil</h3>
+                <p style="border-radius:10px; background-color: rgba(92, 184, 92,0.1); font-size: 18px; text-align:justify; padding:2.5%;">Vestibulum id dolor lobortis, congue libero sit amet, volutpat nunc. Donec fermentum, augue pharetra dignissim facilisis, nibh dui faucibus diam, at sodales lectus ligula eu purus. Praesent augue ante, dapibus ut mauris et, rhoncus efficitur lectus. <br/><br/>
+                
+                • Duis dictum vestibulum metus. <br/>
+                • Duis quis metus et diam pharetra tincidunt.<br/>
+                • Fusce convallis nunc a tellus consequat faucibus.<br/>
+                • Donec eu est non leo tincidunt iaculis quis sed nunc.<br/><br/>
+                
+                Nullam ut diam eget dolor fringilla efficitur. Fusce id blandit nunc, auctor blandit ex. Aenean non neque id dui ullamcorper commodo eu vel urna. Morbi non arcu ac mi viverra elementum ut sed orci. Fusce consequat augue eget dolor rhoncus bibendum.<br/><br/>
+                
+                • Etiam ac lectus. <br/>
+                • Aliquam interdum dictum augue.<br/>
+                • Lectus ornare ornare sed a erat:<br/>
+                <span class="small" style="margin-left:5%">- Suspendisse vitae nisl id augue sollicitudin consectetur. <br/></span>
+                <span class="small" style="margin-left:5%">- Duis euismod vel quam sit amet bibendum. <br/></span>
+                <span class="small" style="margin-left:5%">- Aenean volutpat leo quis dolor fermentum. <br/><br/></span>
+                 
+                Suspendisse congue posuere nunc in malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam et erat ut neque ultrices blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vehicula sagittis aliquet. Duis nec ornare sapien. Proin nec elit imperdiet, convallis augue id, posuere erat. Etiam euismod, felis at tincidunt faucibus, odio nulla porttitor dui, vel imperdiet lorem ex hendrerit tellus.<br/></p>
+                
+                <hr/>
+                
+                <form role="form" style="text-align:center;">
+                    <button type="button" class="btn btn-primary btn-outline btn-lg btn-rounded" data-toggle="modal" data-target="#modalForm" style="font-size:20px;"><strong>Contactar</strong></button>
+                </form>
+                    
+                    <!--Modal Form -->
+                    <div class="modal fade" id="modalForm" tabindex="-1" role="dialog" aria-labelledby="Contactar" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h3 class="modal-title" id="exampleModalLabel">UNPHU JOBS</h3>
+                                                      
+                          </div>
+                          <div class="modal-body">
+                            <form>
+                              <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Para:</label>
+                                <input type="text" class="form-control" value="{{selectedStudent.name}} {{selectedStudent.last_name}} | {{selectedStudent.email}}" disabled>
+                              </div>
+                              <div class="form-group">
+                                <label for="message-text" class="col-form-label">Mensaje:</label>
+                                <textarea class="form-control" id="message-text" rows="7"></textarea>
+                              </div>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"data-toggle="modal" data-target="#modalSentMessage">Enviar Mensaje</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End Modal Form -->
+                    <!--Modal SentMessage -->
+                    <div class="modal fade" id="modalSentMessage" tabindex="-1" role="dialog" aria-labelledby="Sent Message" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                              <h3 class="modal-title" id="exampleModalLabel">UNPHU JOBS</h3>
+                          </div>
+                          <div class="modal-body">
+                            <p style="text-align:center">Su mensaje fue enviado exitosamente!</p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End Modal SentMessage-->
+                    <div class="modal fade" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalAplicarEmpleo" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h3 class="modal-title" id="exampleModalLabel">UNPHU JOBS</h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body" style="font-size: 18px;">
+                            <p style="text-align:center">Gracias por aplicar a este empleo! Sus datos han sido enviados al empleador para su revisión.</p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                
+                
+            </section>
+
+            <!-- <div class="center" ng-model="jobsList">{{jobsList[idselectedStudent].titulo}}</div> -->
+		</div>
+	</div>
+</section>

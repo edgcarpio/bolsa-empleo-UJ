@@ -13,7 +13,7 @@ angular.module('jobApp')
     $scope.student = userTypeService.student;
     $scope.employer = userTypeService.employer;
     $scope.admin = userTypeService.admin;
-
+    $scope.userData = userTypeService.getProfile;
     
     $scope.jobsList = this;
     $scope.studyAreasList = this;
@@ -78,8 +78,9 @@ angular.module('jobApp')
             }
         }
     };
-    
+    /*
     $scope.aplicar = function(){
-        alert('Gracias por aplicar a este empleo! \nSe ha enviado un correo electrónico con tus datos al empleador.');
-    }
+        setTimeout(myFunction, 3000);
+        document.getElementById("aplicar").disabled = true;
+    }*/
   });

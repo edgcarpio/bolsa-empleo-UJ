@@ -30,6 +30,10 @@ angular.module('jobApp')
       return $http.get('../../data/estudiantes.json');  
     };
     
+    this.getAdmins = function(){
+        return $http.get('../../data/administradores.json');
+    };
+    
     this.getOptions = function(){
       return $http.get('../../data/opciones.json');  
     };

@@ -24,7 +24,32 @@
 			</form>
             <div style="margin-top:10px">
                 <a style="color:white; text-decoration: none;" href="" ui-sref="signin"><p>Registrarme</p></a>
-                <a style="color:white; text-decoration: none;" href=""><p>Olvidé mi contraseña</p></a>
+                <a style="color:white; text-decoration: none;" href="" type="submit" data-toggle="modal" data-target="#modalPassword" data-whatever="@unphu.edu.do"><p>Olvidé mi contraseña</p></a>
+                
+                <!-- Modal -->
+                    <div class="modal fade" id="modalPassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="exampleModalLabel" style="color: black">Restablecer Contraseña</h4>
+                          </div>
+                          <div class="modal-body">
+                            <form>
+                              <div class="form-group" style="color: black">
+                                <label for="recipient-name" class="control-label">Correo Electrónico:</label>
+                                <input type="text" class="form-control" id="recipient-name">
+                              </div>
+                            </form>
+                          </div>
+                          <div class="modal-footer" >
+                            <button type="button" class="btn btn-default" data-dismiss="modal" >Cerrar</button>
+                            <button type="button" class="btn btn-primary">Enviar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            <!-- end Modal -->
             </div>
             
 		</div>	

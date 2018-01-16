@@ -13,9 +13,15 @@ angular.module('jobApp')
     $scope.student = userTypeService.student;
     $scope.employer = userTypeService.employer;
     $scope.admin = userTypeService.admin;
-    $scope.userData = userTypeService.getProfile
+    $scope.userData = userTypeService.getProfile;
+    
+    
+    //$scope.var = $scope.getEmployeesByEmployer(1);
+    //console.log();
     
     $scope.jobsList = this;
+    $scope.employerJobList = [];
+    //console.log($scope.employerJobList);
     $scope.studyAreasList = this;
     $scope.employersList = this;
     //$scope.loggedEmployerName = function;
@@ -44,13 +50,13 @@ angular.module('jobApp')
             $scope.selectedJob.creationDate = selectedJob.fecha_creacion;
             $scope.selectedJob.schedule = selectedJob.horario;
             $scope.selectedJob.type = selectedJob.tipo_empleo;
-            console.log($scope.selectedJob);
         }
         $scope.isJobSelected = !$scope.isJobSelected;
     }
     
     mockDataService.getEmployees().then(function(res){
         $scope.jobsList = res.data;
+        $scope.getEmployeesByEmployer($scope.userData.id_empleador);
     });
     
     mockDataService.getStudyAreas().then(function(res){
@@ -59,6 +65,7 @@ angular.module('jobApp')
     
     mockDataService.getEmployers().then(function(res){
        $scope.employersList = res.data;
+        
     });
     
     $scope.getEmployerName = function(employerId){
@@ -67,6 +74,15 @@ angular.module('jobApp')
            if($scope.employersList[employer].id_empleador == employerId){
                $scope.loggedEmployerName = $scope.employersList[employer].nombre_empresa;
                return $scope.employersList[employer].nombre_empresa;
+           };
+       };
+    };
+    
+     $scope.getEmployeesByEmployer = function(employerId){
+        //console.log("getEmployerName");
+       for(var job in $scope.jobsList){
+           if($scope.jobsList[job].id_empleador == employerId){
+               $scope.employerJobList.push($scope.jobsList[job]);
            };
        };
     };
@@ -80,8 +96,8 @@ angular.module('jobApp')
             }
         }
     };
-    
+    /*
     $scope.aplicar = function(){
         alert('Gracias por aplicar a este empleo! \nSe ha enviado un correo electrónico con tus datos al empleador.');
-    }
+    }*/
   });

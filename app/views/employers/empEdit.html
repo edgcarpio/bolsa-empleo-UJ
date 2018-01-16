@@ -1,0 +1,64 @@
+<div class="container" ng-model="jobList">{{getJobByID()}}
+    <a ui-sref="employerHome" class="pull-left btn btn-primary btn-outline btn-rounded"><span class="glyphicon glyphicon-chevron-left"></span> Volver Atras</a><br/>
+    <form role="form">                   
+        <div class="form-content col-md-8 col-lg-8 col-sm-8">
+            <h1 style="text-align:center;"><strong>Editar Empleo</strong></h2>
+            <h3 style="margin: 10%"><strong> <span class="glyphicon glyphicon-list"></span> Datos </strong></h3>
+            <h4>Titulo Empleo: </h4><input type="text" class="form-control input-lg" id="" placeholder="Ej: JBusiness" value='{{jobOBJ.titulo}}' required>
+            <h4>Area de estudio: </h4>
+            <select name="areaEstudioSelect" class="form-control input-lg">
+                <option ng-repeat="area in studyAreas" value="{{area.description}}" ng-selected="jobOBJ.area_estudio == area.description">{{area.description}}
+                </option>
+            </select>
+            <h4>Descripcion: </h4><textarea name="description" rows="8" cols="30" class="form-control input-lg"  required>{{jobOBJ.detalle}}</textarea>
+            
+            <hr>
+            <h3 style="margin: 10%;"><strong> <span class="glyphicon glyphicon-list"></span> Requerimientos </strong></h3>
+            <h4>Requerimientos: </h4><textarea name="description" rows="5" cols="30" class="form-control input-lg"  required>&bull; Req 1
+&bull; Req 2
+&bull; Req 3
+&bull; Req 4
+            </textarea>
+            
+            <hr>
+            <h3 style="margin: 10%;"><strong> <span class="glyphicon glyphicon-list"></span> Condiciones </strong></h3>
+            <h4>Salario RD$: </h4><input type="text" class="form-control input-lg" id="" placeholder="Ej: juan@jbusiness.com" value='{{jobOBJ.salario}}' required>
+            <h4>Tipo </h4>
+            <select name="tipoEmpleoSelect" class="form-control input-lg">
+                <option ng-repeat="type in empTypes" value="{{type.description}}" ng-selected="jobOBJ.tipo_empleo == type.description">{{type.description}}
+                </option>
+            </select>
+            
+            <h4>Horario: </h4>
+            <select name="horarioSelect" class="form-control input-lg">
+                <option ng-repeat="workingDay in workingDays" value="{{workingDay.description}}" ng-selected="jobOBJ.horario == workingDay.description">{{workingDay.description}}
+                </option>
+            </select>
+            
+            
+            <button type="submit" class="btn btn-primary btn-outline btn-lg btn-rounded" data-toggle="modal" data-target="#modalCenter" style="font-size:20px; display: block; margin: 5% auto;"><strong><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar</strong></button>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalAplicarEmpleo" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h3 class="modal-title" id="exampleModalLabel">UNPHU JOBS</h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body" style="font-size: 18px;">
+                            <p style="text-align:center">Datos guardados satisfactoriamente!</p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            
+            
+        </div>                    
+    </form>                
+</div>

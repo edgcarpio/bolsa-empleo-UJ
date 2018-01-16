@@ -11,31 +11,53 @@ angular.module('jobApp')
   .controller('LoginCtrl', function(mockDataService, userTypeService, $scope, $location) {
     
     var u = this;
-    var emp = this;
     $scope.usuario ='';
     $scope.pass ='';
     
+	//Se toma las informaciones de la base de datos, en este caso, del mock data
     mockDataService.getUserData().then(function(res){
         //alert(res.data);
         u.userData = res.data;
     });
     
     mockDataService.getEmployers().then(function(res){
-        emp.loggedEmployer = res.data;
+        u.loggedEmployer = res.data;
         //console.log(emp.loggedEmployer);
     });
     
-
+    mockDataService.getStudents().then(function(res){
+        u.loggedStudent = res.data;
+    });
+    
+    mockDataService.getAdmins().then(function(res){
+       u.loggedAdmin = res.data 
+    });
+    
+	//Funcion para cuando se presiona login
     $scope.submit = function() {
         //console.log($scope.usuario);
+        
         for(var user in u.userData){
-            if((u.userData[user].id_perfil == $scope.usuario) && (u.userData[user].contrasena == $scope.pass)){
-                for(var employer in emp.loggedEmployer){
-                    console.log("antes de Empleador perfil 3 " + emp.loggedEmployer[employer].id_usuario);
-                    if(emp.loggedEmployer[employer].id_usuario == u.userData[user].id_perfil){
-                        console.log("Empleador perfil 3");
-                        userTypeService.getProfile = emp.loggedEmployer[employer];
-                       };
+			//Valida el que el perfil de usuario "mock" sea el mismo que ingrese en el campo "usuario" del login
+			//Perfil Estudiante = Usuario[2] & Contraseña[]  
+			//Perfil Empleador = Usuario[3] & Contraseña[]
+			//Perfil Administrador = Usuario[1] & Contraseña[]
+            if((u.userData[user].id_perfil == $scope.usuario) ){//add: && (u.userData[user].contrasena == $scope.pass)
+                for(var employer in u.loggedEmployer){
+                    if(u.loggedEmployer[employer].id_usuario == u.userData[user].id_perfil){
+                        userTypeService.getProfile = u.loggedEmployer[employer];
+                       };                    
+                }
+                for(var student in u.loggedStudent){
+                    if(u.loggedStudent[student].id_usuario == u.userData[user].id_perfil){
+                        userTypeService.getProfile = u.loggedStudent[student];
+                       };                    
+                }
+                for(var admin in u.loggedAdmin){
+                    if(u.loggedAdmin[admin].id_usuario == u.userData[user].id_perfil){
+                        userTypeService.getProfile = u.loggedAdmin[admin];
+                        console.log(u.userData[user].id_perfil);
+                       };                    
                 }
                 //console.log(emp.loggedEmployer[1]);
                 switch(u.userData[user].id_perfil){

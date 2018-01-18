@@ -1,3 +1,37 @@
-[{"id_usuario":1,"id_perfil":2,"contrasena":"estudiante"},
-{"id_usuario":2,"id_perfil":1,"contrasena":"admin"},
-{"id_usuario":3,"id_perfil":3,"contrasena":"empleador"}]
+[
+    {
+        "id_usuario": 1,
+        "id_perfil": 2,
+        "contrasena": "estudiante",
+        "nombre": "Betty Scott",
+        "email": "bscott@unphu.edu.do"
+    },
+    {
+        "id_usuario": 2,
+        "id_perfil": 1,
+        "contrasena": "admin",
+        "nombre": "Administrator",
+        "email": "admin@unphujobs.do"
+    },
+    {
+        "id_usuario": 3,
+        "id_perfil": 3,
+        "contrasena": "empleador",
+        "nombre": "Software Logistic SRL",
+        "email": "info@slogistic.com.do"
+    },
+    {
+        "id_usuario": 4,
+        "id_perfil": 2,
+        "contrasena": "estud2",
+        "nombre": "John Doe",
+        "email": "jdoe@unphu.edu.do"
+    },
+    {
+        "id_usuario": 5,
+        "id_perfil": 2,
+        "contrasena": "est",
+        "nombre": "Ragnar Lothbrok",
+        "email": "rlothbrok@unphu.edu.do"
+    }
+]

@@ -2,8 +2,7 @@
     <a ui-sref="employerHome" class="pull-left btn btn-primary btn-outline btn-rounded"><span class="glyphicon glyphicon-chevron-left"></span> Volver Atras</a><br/>
     <form role="form">                   
         <div class="form-content col-md-8 col-lg-8 col-sm-8">
-            <h1 style="text-align:center;"><strong>Editar Empleo</strong></h2>
-            <h3 style="margin: 10%"><strong> <span class="glyphicon glyphicon-list"></span> Datos </strong></h3>
+            <h2 style="text-align:center;"><strong> <span class="glyphicon glyphicon-list"></span> Datos Generales</strong></h2>
             <h4>Titulo Empleo: </h4><input type="text" class="form-control input-lg" id="" placeholder="Ej: JBusiness" value='{{jobOBJ.titulo}}' required>
             <h4>Area de estudio: </h4>
             <select name="areaEstudioSelect" class="form-control input-lg">
@@ -13,7 +12,7 @@
             <h4>Descripcion: </h4><textarea name="description" rows="8" cols="30" class="form-control input-lg"  required>{{jobOBJ.detalle}}</textarea>
             
             <hr>
-            <h3 style="margin: 10%;"><strong> <span class="glyphicon glyphicon-list"></span> Requerimientos </strong></h3>
+            <h2 style="margin-top: 10%; text-align:center;"><strong> <span class="glyphicon glyphicon-list"></span> Requerimientos </strong></h2>
             <h4>Requerimientos: </h4><textarea name="description" rows="5" cols="30" class="form-control input-lg"  required>&bull; Req 1
 &bull; Req 2
 &bull; Req 3
@@ -21,7 +20,7 @@
             </textarea>
             
             <hr>
-            <h3 style="margin: 10%;"><strong> <span class="glyphicon glyphicon-list"></span> Condiciones </strong></h3>
+            <h2 style="margin-top: 10%; text-align:center;"><strong> <span class="glyphicon glyphicon-list"></span> Condiciones </strong></h2>
             <h4>Salario RD$: </h4><input type="text" class="form-control input-lg" id="" placeholder="Ej: juan@jbusiness.com" value='{{jobOBJ.salario}}' required>
             <h4>Tipo </h4>
             <select name="tipoEmpleoSelect" class="form-control input-lg">

@@ -25,7 +25,8 @@
       <ul class="nav nav-sidebar" ng-model='employer' ng-show='employer'>
           <li ng-class="{active: $state.includes('employerHome')}"><a ui-sref="employerHome">Inicio<span class="sr-only">(current)</span></a></li>
           <li ng-class="{active: $state.includes('editProfile')}"><a ui-sref="editProfile">Editar Perfil</a></li>
-          <li ng-class="{active: $state.includes('studentSearch')}"><a href="" ui-sref="studentSearch">Buscar Estudiantes</a></li>
+          <li ng-class="{active: $state.includes('addEmp')}"><a ui-sref="addEmp">Agregar Empleo</a></li>
+          <li ng-class="{active: $state.includes('studentSearch')}"><a ui-sref="studentSearch">Buscar Estudiantes</a></li>
       </ul>
 
       <ul class="nav nav-sidebar" ng-model='admin' ng-show='admin'>          

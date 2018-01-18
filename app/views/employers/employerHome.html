@@ -16,11 +16,13 @@
             
             <div class="panel-group">
                 <div class="panel panel-default" style="margin-top: 5%;" ng-repeat="job in employerJobList | orderBy: -'fecha_creacion'" >
-                    <div class="panel-heading"><a ng-click="setSelected(job)" class="" href="" style="text-decoration:none; color:white; font-size:24px; margin:auto; clear: fix;"><strong>{{job.titulo | uppercase}}</strong></a><span class="pull-right"><a href="" ui-sref="empEdit({jobID: job.id_empleo})" style=""><img alt="Editar" src="../../images/edit.png" width="30px" /></a><a type="submit" data-toggle="modal" data-target="#modalDelete" href="#" ui-sref="delete"><img alt="Eliminar" src="../../images/eliminar.png" width="30px" /></a></span></div>
+                    <div class="panel-heading"><a ng-click="setSelected(job)" class="" href="" style="text-decoration:none; color:white; font-size:24px; margin:auto; clear: fix;"><strong>{{job.titulo | uppercase}}</strong></a><span class="pull-right"><a href="" ui-sref="empEdit({jobID: job.id_empleo})"><img alt="Editar" src="../../images/edit.png" width="30px" /></a><a type="submit" data-toggle="modal" data-target="#modalDelete" href="#" ui-sref="delete"><img alt="Eliminar" src="../../images/eliminar.png" width="30px" /></a></span></div>
                     <div class="panel-body" ng-click="setSelected(job)"><a class="btn-block" href="#" style="text-decoration:none; color:#555; text-align:justify;"><small>{{job.detalle | limitTo: 235}}...</small> <strong><em>Leer Más.</em></strong></a></div>
-                    <div class="panel-footer" style="" ng-click="setSelected(job)"><strong>{{getAreaName(job.id_area_estudio)}} <span class="pull-right"> {{job.fecha_creacion}}</span></strong></div>
+                    <div class="panel-footer" ng-click="setSelected(job)"><strong>{{getAreaName(job.id_area_estudio)}} <span class="pull-right"> {{job.fecha_creacion}}</span></strong></div>
                 </div>
             </div> 
+
+            <button type="submit" class="btn btn-primary btn-outline btn-lg btn-rounded center" style="font-size:20px; display: block; margin: 5% auto;" ui-sref="addEmp"><strong>Agregar Empleo </strong><img alt="Crear" src="../../images/add.png" width="30px"/></button>
             
             <!-- Modal -->
                     <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="ModalEliminarEmpleo" aria-hidden="true">

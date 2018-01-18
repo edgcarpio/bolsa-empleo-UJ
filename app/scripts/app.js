@@ -67,6 +67,12 @@ angular
         templateUrl: 'views/employers/empEdit.html',
         controller: 'empEditCtrl'
       })
+      .state('addEmp', {
+        url: '/addEmp',
+        parent: 'dashboard',
+        templateUrl: 'views/employers/empEdit.html',
+        controller: 'empEditCtrl'
+      })
       .state('studentSearch', {
         url: '/studentSearch',
         parent: 'dashboard',
@@ -77,6 +83,18 @@ angular
         url: '/admin',
         parent: 'dashboard',
         templateUrl: 'views/admins/adminHome.html',
+        controller: 'adminHomeCtrl'
+      })
+      .state('adminEmployees', {
+        url: '/adminEmp',
+        parent: 'dashboard',
+        templateUrl: 'views/admins/adminEmployees.html',
+        controller: 'adminHomeCtrl'
+      })
+      .state('adminReports', {
+        url: '/Reports',
+        parent: 'dashboard',
+        templateUrl: 'views/admins/adminReports.html',
         controller: 'adminHomeCtrl'
       })
   });

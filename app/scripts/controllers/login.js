@@ -56,7 +56,7 @@ angular.module('jobApp')
                 for(var admin in u.loggedAdmin){
                     if(u.loggedAdmin[admin].id_usuario == u.userData[user].id_perfil){
                         userTypeService.getProfile = u.loggedAdmin[admin];
-                        console.log(u.userData[user].id_perfil);
+                        //console.log(u.userData[user].id_perfil);
                        };                    
                 }
                 //console.log(emp.loggedEmployer[1]);
